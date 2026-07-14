@@ -10,6 +10,8 @@ test("exports a complete personal homepage", () => {
   assert.match(html, /Interactions give/);
   assert.match(html, /Memento Skill/);
   assert.match(html, /The Chinese University of Hong Kong, Shenzhen/);
+  assert.match(html, /orbital-particle particle-one/);
+  assert.match(html, /core-pulse/);
 });
 
 test("removes the temporary starter preview", () => {

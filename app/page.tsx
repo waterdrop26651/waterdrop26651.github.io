@@ -1,3 +1,5 @@
+import { MotionController } from "./motion-controller";
+
 const researchVectors = [
   {
     index: "01",
@@ -95,6 +97,7 @@ function Arrow() {
 export default function Home() {
   return (
     <main>
+      <MotionController />
       <a className="skip-link" href="#content">
         Skip to content
       </a>
@@ -129,11 +132,9 @@ export default function Home() {
         <div className="hero-copy">
           <p className="kicker"><span>Student researcher</span><span>Artificial intelligence</span></p>
           <h1 id="hero-title">
-            Representations <em>flow.</em>
-            <br />
-            Interactions give
-            <br />
-            them <em>shape.</em>
+            <span className="hero-line">Representations <em>flow.</em></span>
+            <span className="hero-line">Interactions give</span>
+            <span className="hero-line">them <em>shape.</em></span>
           </h1>
           <div className="hero-intro">
             <p>
@@ -158,6 +159,10 @@ export default function Home() {
           <div className="orbit orbit-one" />
           <div className="orbit orbit-two" />
           <div className="orbit orbit-three" />
+          <span className="orbital-particle particle-one" aria-hidden="true" />
+          <span className="orbital-particle particle-two" aria-hidden="true" />
+          <span className="orbital-particle particle-three" aria-hidden="true" />
+          <span className="core-pulse" aria-hidden="true" />
           <span className="orbit-label orbit-label-one">REPRESENTATION</span>
           <span className="orbit-label orbit-label-two">INTERACTION</span>
           <span className="orbit-label orbit-label-three">MEMORY</span>
@@ -183,11 +188,11 @@ export default function Home() {
 
       <div id="content">
         <section className="section about-section" id="about" aria-labelledby="about-title">
-          <div className="section-rail">
+          <div className="section-rail" data-reveal>
             <p className="section-index">01 / ABOUT</p>
             <p className="rail-note">Seek truth from facts.</p>
           </div>
-          <div className="about-content">
+          <div className="about-content" data-reveal>
             <h2 id="about-title">
               I follow the undercurrent between
               <span> representation and interaction.</span>
@@ -210,7 +215,7 @@ export default function Home() {
         </section>
 
         <section className="section research-section" id="research" aria-labelledby="research-title">
-          <div className="section-heading">
+          <div className="section-heading" data-reveal>
             <div>
               <p className="section-index">02 / RESEARCH VECTORS</p>
               <h2 id="research-title">Four currents, one question.</h2>
@@ -222,7 +227,7 @@ export default function Home() {
 
           <div className="vector-grid">
             {researchVectors.map((vector) => (
-              <article className="vector-card" key={vector.index}>
+              <article className="vector-card" key={vector.index} data-reveal>
                 <div className="vector-topline">
                   <span>{vector.index}</span>
                   <span className="vector-dot" aria-hidden="true" />
@@ -238,7 +243,7 @@ export default function Home() {
         </section>
 
         <section className="section projects-section" id="projects" aria-labelledby="projects-title">
-          <div className="section-heading projects-heading">
+          <div className="section-heading projects-heading" data-reveal>
             <div>
               <p className="section-index">03 / SELECTED WORK</p>
               <h2 id="projects-title">Projects in motion.</h2>
@@ -261,6 +266,7 @@ export default function Home() {
                 target="_blank"
                 rel="noreferrer"
                 key={project.name}
+                data-reveal
               >
                 <span className="project-number">{String(index + 1).padStart(2, "0")}</span>
                 <span className="project-main">
@@ -276,15 +282,15 @@ export default function Home() {
         </section>
 
         <section className="section trajectory-section" aria-labelledby="trajectory-title">
-          <div className="section-rail">
+          <div className="section-rail" data-reveal>
             <p className="section-index">04 / TRAJECTORY</p>
             <p className="rail-note">Learning across modalities.</p>
           </div>
           <div className="trajectory-content">
-            <h2 id="trajectory-title">Education</h2>
+            <h2 id="trajectory-title" data-reveal>Education</h2>
             <div className="timeline">
               {education.map((item) => (
-                <article className="timeline-item" key={item.period}>
+                <article className="timeline-item" key={item.period} data-reveal>
                   <div className="timeline-period">
                     <span className="timeline-node" aria-hidden="true" />
                     {item.period}
@@ -303,16 +309,16 @@ export default function Home() {
         <section className="contact-section" id="contact" aria-labelledby="contact-title">
           <div className="contact-orbit contact-orbit-one" aria-hidden="true" />
           <div className="contact-orbit contact-orbit-two" aria-hidden="true" />
-          <p className="section-index">05 / CONNECT</p>
-          <h2 id="contact-title">
+          <p className="section-index" data-reveal>05 / CONNECT</p>
+          <h2 id="contact-title" data-reveal>
             Let&apos;s follow a
             <br />
             <em>new current.</em>
           </h2>
-          <p>
+          <p data-reveal>
             Open to research conversations, strange ideas, and collaborations around intelligent systems.
           </p>
-          <div className="contact-actions">
+          <div className="contact-actions" data-reveal>
             <a className="button button-light" href="mailto:2022302111349@whu.edu.cn">
               Start a conversation <Arrow />
             </a>
