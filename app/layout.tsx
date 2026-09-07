@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Zihao Wang", url: "https://github.com/waterdrop26651" }],
   alternates: { canonical: "/" },
+  verification: {
+    google: "iqacXh4uWdWwomQ3cM6sr-Ii-Bnp7-z7cTbkZCsDJIY",
+  },
   icons: { icon: "/avatar.jpg" },
   openGraph: {
     title: "Zihao Wang — Homepage",
