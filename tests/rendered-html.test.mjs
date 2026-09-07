@@ -4,14 +4,22 @@ import test from "node:test";
 
 const html = await readFile(new URL("../out/index.html", import.meta.url), "utf8");
 
-test("exports a complete personal homepage", () => {
-  assert.match(html, /<title>Zihao Wang — AI Researcher<\/title>/i);
-  assert.match(html, /Representations/);
-  assert.match(html, /Interactions give/);
-  assert.match(html, /Memento Skill/);
+test("exports a complete academic homepage", () => {
+  assert.match(html, /<title>Zihao Wang<\/title>/i);
+  assert.match(html, /M\.Phil\. Student/);
+  assert.match(html, /School of Artificial Intelligence/);
   assert.match(html, /The Chinese University of Hong Kong, Shenzhen/);
-  assert.match(html, /orbital-particle particle-one/);
-  assert.match(html, /core-pulse/);
+  assert.match(html, /Zhizheng Wu/);
+  assert.match(html, /speech language models/);
+  assert.match(html, /MMAligner/);
+  assert.match(html, /ACM Conference on Computer and Communications Security/);
+  assert.match(html, /arxiv\.org\/abs\/2608\.05909/);
+  assert.match(html, /Memento Skill/);
+  assert.match(html, /2022302111349@whu\.edu\.cn/);
+});
+
+test("does not render the Chinese name", () => {
+  assert.doesNotMatch(html, /王梓豪/);
 });
 
 test("removes the temporary starter preview", () => {
