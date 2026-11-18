@@ -14,12 +14,16 @@ test("exports a complete academic homepage", () => {
   assert.match(html, /MMAligner/);
   assert.match(html, /ACM Conference on Computer and Communications Security/);
   assert.match(html, /arxiv\.org\/abs\/2608\.05909/);
-  assert.match(html, /Memento Skill/);
+  assert.match(html, /scholar\.google\.com\/citations\?user=KyrsunoAAAAJ/);
   assert.match(html, /2022302111349@whu\.edu\.cn/);
 });
 
 test("does not render the Chinese name", () => {
   assert.doesNotMatch(html, /王梓豪/);
+});
+
+test("does not list open-source projects", () => {
+  assert.doesNotMatch(html, /Memento Skill|Open Source/);
 });
 
 test("removes the temporary starter preview", () => {
